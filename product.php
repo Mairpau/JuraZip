@@ -58,10 +58,20 @@
 <?php
   $id = $_GET['id'];
 
+
+  $GLOBALS['list'] = [];
+
+  function addToCard() {
+    $list.add(this.$id);
+    alert($list);
+
+    exit;
+  };
+
   $text1 = "Grande pochette parfaite pour stocker une multitude d'objets.";
   $text2 = "Trousse basique.";
-  $text3 = "Pochette idéal pour les smartphones de 3 à 6 pouces.";
-  $text4 = "Petit porte-monnaie pratique et facilement transportable.";
+  $text3 = "Housse pas mal";
+  $text4 = "Petit porte-carte permettant de garder avec vous vos diverses cartes aussi qu'un peu de monnaie.";
 ?>
 
 <!-- Product Section -->
@@ -79,11 +89,11 @@
                 echo "Pochette";
               } elseif ($id === 'trousse') {
                 echo "Trousse";
-              } elseif ($id === 'smartphone') {
-                echo "Housse pour smartphone";
-              } elseif ($id === 'monnaie') {
-                echo "Porte-monnaie";
-              }
+              } elseif ($id === 'housse') {
+                echo "Housse";
+              } elseif ($id === 'carte') {
+              echo "Porte cartes";
+            }
             ?>
           </h2>
 
@@ -95,37 +105,57 @@
                 echo $text1;
               } elseif ($id === 'trousse') {
                 echo $text2;
-              } elseif ($id === 'smartphone') {
+              } elseif ($id === 'housse') {
                 echo $text3;
-              } elseif ($id === 'monnaie') {
+              } elseif ($id === 'carte') {
                 echo $text4;
               }
             ?>
           </p>
 
-          <h3>Prix</h3>
+          <h3>Taille</h3>
           <p>
             <?php
               if ($id === 'pochette') {
                 echo "18";
               } elseif ($id === 'trousse') {
                 echo "16";
-              } elseif ($id === 'smartphone') {
-                echo "12";
-              } elseif ($id === 'monnaie') {
+              } elseif ($id === 'housse') {
                 echo "8";
-              }
+              } elseif ($id === 'carte') {
+                echo "6";
+            }
+            ?>
+             cm
+          </p>
+
+          <h3>Prix</h3>
+          <p>
+            CHF
+            <?php
+              if ($id === 'pochette') {
+                echo "19";
+              } elseif ($id === 'trousse') {
+                echo "16";
+              } elseif ($id === 'housse') {
+                echo "10";
+              } elseif ($id === 'carte') {
+                echo "8";
+            }
             ?>
             .-
           </p>
 
           <h3>Couleurs</h3>
           <p>
+            <ol>
+              <li><canvas id="can" width="30" height="30"/></li>
+            </ol>
           </p>
 
-          <a href="panier.php" class="btn btn-custom btn-lg page-scroll">Ajouter au panier</a></div>
+          <a onclick="$this.addToCard();" class="btn btn-custom btn-lg">Ajouter au panier</a>
 
-          </div>
+
         </div>
       </div>
     </div>
